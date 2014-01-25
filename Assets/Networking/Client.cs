@@ -47,8 +47,8 @@ public class Client : MonoBehaviour
 	        LoadingScreen.GetComponent<LoadingScreen>().PlayerShipVirtual = newShip;
 
 		// Generate a new map seed.
-		Map.AddComponent<Map> ();
-		Map.GetComponent<Map> ().Seed = UnityEngine.Random.seed;
-		Map.GetComponent<Map> ().Ship = newShip;
+		Map.AddComponent<WorldGenerator> ();
+		Map.GetComponent<WorldGenerator> ().Seed = UnityEngine.Random.seed;
+		Map.GetComponent<WorldGenerator> ().Ship = newShip;
 	    }
 }

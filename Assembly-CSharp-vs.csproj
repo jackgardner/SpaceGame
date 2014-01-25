@@ -51,7 +51,6 @@
      <Compile Include="Assets\Math.cs" />
      <Compile Include="Assets\Networking\Client.cs" />
      <Compile Include="Assets\Networking\LoadingScreen.cs" />
-     <Compile Include="Assets\Networking\Map.cs" />
      <Compile Include="Assets\Networking\MouseLookPlayer.cs" />
      <Compile Include="Assets\Networking\NetworkPlayer.cs" />
      <Compile Include="Assets\Networking\ShipSync.cs" />
@@ -104,9 +103,14 @@
      <Compile Include="Assets\Ship\UI\Basic\Engines\Basic_EngineIncreaseThrust_UI.cs" />
      <Compile Include="Assets\Ship\UI\Basic\PowerGenerators\Basic_PowerGeneratorDecreaseLevel_UI.cs" />
      <Compile Include="Assets\Ship\UI\Basic\PowerGenerators\Basic_PowerGeneratorIncreaseLevel_UI.cs" />
+     <Compile Include="Assets\WorldGeneration\BasicWorldStream.cs" />
+     <Compile Include="Assets\WorldGeneration\ChunkObject.cs" />
+     <Compile Include="Assets\WorldGeneration\IWorldStreamSource.cs" />
+     <Compile Include="Assets\WorldGeneration\WorldGenerator.cs" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
+     <None Include="Assets\Photon Unity Networking\changelog.txt" />
  <Reference Include="Photon3Unity3D">
  <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
  </Reference>
