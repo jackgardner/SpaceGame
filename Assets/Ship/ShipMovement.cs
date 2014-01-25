@@ -7,6 +7,7 @@ using System.Collections;
 /// class to handle ship movement
 /// </summary>
 public class ShipMovement: MonoBehaviour {
+
 	public PowerGenerator[] PowerGenerators;
 	public ShipStation[] ShipStations;
 	public AdvancedShipStation[] AdvancedShipStations;

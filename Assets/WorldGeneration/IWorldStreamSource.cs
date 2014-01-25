@@ -13,5 +13,5 @@ using System.Collections.Generic;
 
 public interface IWorldStreamSource
 {
-	IEnumerable<ChunkObject> GetObjects(Bounds bounds);
+	List<ChunkObject> GetObjects(Bounds mapbounds);
 }

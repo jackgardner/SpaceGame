@@ -9,7 +9,6 @@ public class BasicEngineeringConsole : BasicShipStation {
 	}
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("Basic Engineering Console is .." + this.Active);
 	}
 	
 	public override float Operate(float availablePower)

@@ -10,6 +10,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class BasicWorldStream : IWorldStreamSource
 {
@@ -17,28 +18,25 @@ public class BasicWorldStream : IWorldStreamSource
 	{
 	}
 
-	public IEnumerable<ChunkObject> GetObjects(Bounds bounds)
+	public List<ChunkObject> GetObjects(Bounds mapbounds)
 	{
-		int numberOfObjects = UnityEngine.Random.Range(0, 100);
+		int numberOfObjects = UnityEngine.Random.Range(0, 10000);
 		
 		List<ChunkObject> retEnum = new List<ChunkObject>(numberOfObjects);
-		
 		for (int i = 0; i < numberOfObjects; i++)
-		{
+		{	
 			// Get the position of the new object
-			float xLocation = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
-			float yLocation = UnityEngine.Random.Range(bounds.min.y, bounds.max.y);
-			float zLocation = UnityEngine.Random.Range(bounds.min.z, bounds.max.z);
-			
-			ChunkObject newCO = new ChunkObject(new Vector3(xLocation, yLocation,zLocation), Vector3.one, Quaternion.identity, "Asteroid");
-			//GameObject chunkIdentifier = new GameObject(string.Format("{0} {1} {2}", xLocation, yLocation, zLocation));
+			float xLocation = UnityEngine.Random.Range(mapbounds.min.x, mapbounds.max.x);
+			float yLocation = UnityEngine.Random.Range(mapbounds.min.y, mapbounds.max.y);
+			float zLocation = UnityEngine.Random.Range(mapbounds.min.z, mapbounds.max.z);
 
-			// Check if the new co overlaps with any exisiting ones
-			/*for (int j = 0; j < numberOfObjects; j++) {
-				if (!newCO.bounds.Intersects(retEnum[j].bounds)){
-					retEnum[i] = newCO;
-				}
-			}*/
+			ChunkObject newobject = new ChunkObject(){
+				Position = new Vector3(xLocation, yLocation, zLocation), 
+				Scale = Vector3.one, 
+				Rotation = Quaternion.identity, 
+				ChunkObjectType = "Asteroid"};
+
+			retEnum.Add(newobject);
 		}
 
 		return retEnum;

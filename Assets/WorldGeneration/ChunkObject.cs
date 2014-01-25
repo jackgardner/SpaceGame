@@ -10,23 +10,12 @@
 using System;
 using UnityEngine;
 
-public class ChunkObject
+public struct ChunkObject
 {
-	public Vector3 Position { get; set; }
-	public Quaternion Rotation{ get; set; }
-	public Vector3 Scale { get; set; }
-	public Bounds bounds { get; set; }
-	public string ChunkObjectType { get; set; }
-
-
-	public ChunkObject(Vector3 position, Vector3 scale, Quaternion rotation, string chunkObjectType)
-	{
-		this.bounds = new Bounds (position, scale);
-		this.Position = position;
-		this.Scale = scale;
-		this.Rotation = rotation;
-		this.ChunkObjectType = chunkObjectType;
-	}
+	public Vector3 Position {get;set;}
+	public Quaternion Rotation {get;set;}
+	public Vector3 Scale {get;set;}
+	public String ChunkObjectType {get;set;}
 }
 
 
