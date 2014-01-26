@@ -1,17 +1,20 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldGeneration\Octree.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldGeneration\WorldGenerator.cs">
     <Files>
-      <File FileName="Assets\WorldGeneration\IWorldStreamSource.cs" Line="18" Column="1" />
-      <File FileName="Assets\Ship\CameraScript.cs" Line="20" Column="29" />
-      <File FileName="Assets\Ship\Components\Stations\Advanced\AdvancedShipStation.cs" Line="13" Column="3" />
-      <File FileName="Assets\Ship\Health.cs" Line="19" Column="23" />
+      <File FileName="Assets\WorldGeneration\WorldGenerator.cs" Line="62" Column="6" />
+      <File FileName="Assets\WorldGeneration\Octree.cs" Line="54" Column="3" />
+      <File FileName="Assets\WorldGeneration\InMemoryWorldStream.cs" Line="13" Column="28" />
+      <File FileName="Assets\WorldGeneration\IWorldStreamSource.cs" Line="16" Column="15" />
+      <File FileName="Assets\Ship\CameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Ship\Components\Stations\Advanced\AdvancedShipStation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Ship\Health.cs" Line="1" Column="1" />
       <File FileName="Assets\Math.cs" Line="1" Column="1" />
-      <File FileName="Assets\Ship\ShipComponent.cs" Line="24" Column="10" />
-      <File FileName="Assets\Ship\ShipMovement.cs" Line="10" Column="2" />
+      <File FileName="Assets\Ship\ShipComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Ship\ShipMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\CharacterMotor.cs" Line="1" Column="1" />
       <File FileName="Assets\FPSInputController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Ship\Components\Stations\Basic\BasicEngineeringConsole.cs" Line="11" Column="18" />
+      <File FileName="Assets\Ship\Components\Stations\Basic\BasicEngineeringConsole.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\Components\Stations\Basic\BasicNavigationConsole.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\UI\Basic\BasicUIControl.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\UI\Basic\PowerGenerators\Basic_PowerGeneratorDecreaseLevel_UI.cs" Line="1" Column="1" />
@@ -23,11 +26,10 @@
       <File FileName="Assets\Networking\ShipSync.cs" Line="1" Column="1" />
       <File FileName="Assets\Networking\LoadingScreen.cs" Line="1" Column="1" />
       <File FileName="Assets\Networking\Client.cs" Line="1" Column="1" />
-      <File FileName="Assets\WorldGeneration\BasicWorldStream.cs" Line="40" Column="4" />
+      <File FileName="Assets\WorldGeneration\BasicWorldStream.cs" Line="12" Column="19" />
       <File FileName="Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewInspector.cs" Line="1" Column="1" />
-      <File FileName="Assets\WorldGeneration\WorldGenerator.cs" Line="50" Column="3" />
-      <File FileName="Assets\WorldGeneration\ChunkObject.cs" Line="15" Column="13" />
-      <File FileName="Assets\WorldGeneration\Octree.cs" Line="60" Column="39" />
+      <File FileName="Assets\WorldGeneration\WorldGenerator.cs" Line="80" Column="1" />
+      <File FileName="Assets\WorldGeneration\ChunkObject.cs" Line="15" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
