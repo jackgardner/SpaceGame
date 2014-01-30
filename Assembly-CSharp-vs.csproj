@@ -106,6 +106,7 @@
      <Compile Include="Assets\WorldGeneration\BasicWorldStream.cs" />
      <Compile Include="Assets\WorldGeneration\ChunkObject.cs" />
      <Compile Include="Assets\WorldGeneration\IWorldStreamSource.cs" />
+     <Compile Include="Assets\WorldGeneration\InMemoryWorldStream.cs" />
      <Compile Include="Assets\WorldGeneration\Octree.cs" />
      <Compile Include="Assets\WorldGeneration\WorldGenerator.cs" />
      <None Include="Assets\Plugins\release_history.txt" />

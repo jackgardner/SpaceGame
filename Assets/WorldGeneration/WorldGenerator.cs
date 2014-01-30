@@ -6,7 +6,7 @@ public class WorldGenerator : Photon.MonoBehaviour
 {
 	public int Seed;
 	public GameObject Ship;
-	public Vector3 oldShipPosition;
+	public Vector3 oldShipPosition = Vector3.zero;
 
 	public List<GameObject> LiveObjects = new List<GameObject>();
 	public List<ChunkObject> MapObjects = new List<ChunkObject>();
@@ -49,7 +49,7 @@ public class WorldGenerator : Photon.MonoBehaviour
 	void Update ()
 	{
 		// I.E We've moved somewhere.
-		if (Ship.transform.position != oldShipPosition) {
+		if (HasShipMoved(20)) {
 			Bounds generateDistance = new Bounds (Ship.transform.position, Vector3.one * VIEW_DISTANCE);
 			foreach (ChunkObject c in StreamSource.GetObjects(generateDistance))
 			{
@@ -61,15 +61,27 @@ public class WorldGenerator : Photon.MonoBehaviour
 					GO.transform.parent = this.transform;
 				}
 			}
-			List<GameObject> temp = LiveObjects;
-			foreach (GameObject go in temp.Where(o => !generateDistance.Intersects(new Bounds(o.transform.position,new Vector3(3,3,3))))){
-				Debug.Log ("Deleting" + go.transform.position.ToString ());
-				temp.Remove (go);
-				PhotonNetwork.Destroy (go);
+			for (var i = LiveObjects.Count() - 1; i >= 0; i--) {
+				//Replace your Where(...)
+				var go = LiveObjects[i];
+				if (!generateDistance.Intersects(new Bounds(go.transform.position,new Vector3(3,3,3))))
+					continue;
+
+				Debug.Log ("Deleting" + LiveObjects[i].transform.position.ToString ());
+				GameObject reference = LiveObjects[i];
+				LiveObjects.RemoveAt(i);
+				PhotonNetwork.Destroy (reference);
+				//body of foreach loop goes here
 			}
-			LiveObjects = temp;
+			oldShipPosition = Ship.transform.position;
 		}
-		oldShipPosition = Ship.transform.position;
+	}
+	bool HasShipMoved(float Deviation)
+	{
+		Vector3 shippos = Ship.transform.position;
+		Vector3 oldpos = oldShipPosition;
+
+		return (shippos - oldpos).magnitude > Deviation;
 	}
 
 	void DeleteCO(GameObject go)

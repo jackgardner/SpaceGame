@@ -1,11 +1,12 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldGeneration\WorldGenerator.cs">
     <Files>
-      <File FileName="Assets\WorldGeneration\WorldGenerator.cs" Line="62" Column="6" />
-      <File FileName="Assets\WorldGeneration\Octree.cs" Line="54" Column="3" />
-      <File FileName="Assets\WorldGeneration\InMemoryWorldStream.cs" Line="13" Column="28" />
-      <File FileName="Assets\WorldGeneration\IWorldStreamSource.cs" Line="16" Column="15" />
+      <File FileName="Assets\WorldGeneration\WorldGenerator.cs" Line="52" Column="26" />
+      <File FileName="Assets\WorldGeneration\WorldGenerator.cs" Line="92" Column="1" />
+      <File FileName="Assets\WorldGeneration\Octree.cs" Line="1" Column="1" />
+      <File FileName="Assets\WorldGeneration\InMemoryWorldStream.cs" Line="1" Column="1" />
+      <File FileName="Assets\WorldGeneration\IWorldStreamSource.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\CameraScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\Components\Stations\Advanced\AdvancedShipStation.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\Health.cs" Line="1" Column="1" />
@@ -26,10 +27,9 @@
       <File FileName="Assets\Networking\ShipSync.cs" Line="1" Column="1" />
       <File FileName="Assets\Networking\LoadingScreen.cs" Line="1" Column="1" />
       <File FileName="Assets\Networking\Client.cs" Line="1" Column="1" />
-      <File FileName="Assets\WorldGeneration\BasicWorldStream.cs" Line="12" Column="19" />
+      <File FileName="Assets\WorldGeneration\BasicWorldStream.cs" Line="1" Column="1" />
       <File FileName="Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewInspector.cs" Line="1" Column="1" />
-      <File FileName="Assets\WorldGeneration\WorldGenerator.cs" Line="80" Column="1" />
-      <File FileName="Assets\WorldGeneration\ChunkObject.cs" Line="15" Column="36" />
+      <File FileName="Assets\WorldGeneration\ChunkObject.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
