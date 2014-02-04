@@ -12,8 +12,13 @@ public class ShipMovement: MonoBehaviour {
 	public ShipStation[] ShipStations;
 	public AdvancedShipStation[] AdvancedShipStations;
 	public Engine[] Engines;
-    	public GameObject ShipInterior;
+
+    public ShipComponent[] ShipComponents;
+
+    public GameObject ShipInterior;
 	public GameObject ShipNetwork;
+
+    float AvaliablePower = 0f;
 
 	// 1 Unit of thrust = 0.5 Power Units
 	public float AvaliablePower = 0f;
@@ -26,44 +31,14 @@ public class ShipMovement: MonoBehaviour {
 	// Update is called once per frame
     	void Update ()
 	{
-
-		// Power Generation Handling
-		AvaliablePower = 0f; // Ineffiecent - find a better way to do this.
-		foreach (PowerGenerator p in PowerGenerators) {
-			AvaliablePower += p.Operate(AvaliablePower);
-		}
-
-		// Engine Handling
-		foreach (Engine e in Engines.Where(e => e.health.Alive == true)) {
-			AvaliablePower -= e.Operate(AvaliablePower);
-		}
-
-		// Console Handling
-		// Medium Ship Stations (Dont need to bother with basic as they dont require any power)
-		foreach (ShipStation s in ShipStations.Where(e => e.health.Alive == true)) {
-			AvaliablePower -= s.Operate(AvaliablePower);
-		}
-		// Advanced Ship Stations
-		foreach (AdvancedShipStation s in AdvancedShipStations.Where(e => e.health.Alive == true)) {
-			AvaliablePower -= s.Operate(AvaliablePower);
-		}
-
-		/*
-		// When implementing this you need to be careful to handle power generators properly.
-		// I suggest returning a negative value from operate on generators.
-		foreach (ShipComponent c in Components)
+		foreach (ShipComponent c in ShipComponents)
 		{
-			if (!c.healthRef.Alive)
+			if (c.healthRef.Alive)
 				continue;
-				
+		    // Make sure power generators return a negative value.		
 			AvailablePower -= s.Operate(AvailablePower)
 		}
-		*/
 		
-
-		//ShipInterior.transform.position = this.transform.position;
-		//ShipInterior.transform.rotation = this.transform.rotation;
-
 		ShipNetwork.transform.position = this.transform.position;
 		ShipNetwork.transform.rotation = this.transform.localRotation;
 	}

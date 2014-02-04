@@ -25,6 +25,11 @@ public abstract class ShipComponent : MonoBehaviour
 			// and for alive.
 		}
 	}
+
+    public protected void ModUsage(float amount)
+    {
+
+    }
 	
 	/// <summary>
         /// Called once per frame, this is an opportunity for this component to use power
