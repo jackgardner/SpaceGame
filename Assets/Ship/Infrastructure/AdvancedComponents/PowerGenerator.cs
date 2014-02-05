@@ -1,17 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PowerGenerator : ShipComponent {
-	public float Capability = 10000f;
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class PowerGenerator : AdvancedShipComponent {
 
-	// Update is called once per frame
-	void Update () {
-	}
-	
+	// How much power can this generator produce per tick ?
+	public float Capability = 1000f;
+
 	public override float Operate(float availablePower)
 	{
 	        float Output = 0f;

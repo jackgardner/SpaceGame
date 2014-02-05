@@ -1,18 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Engine : ShipComponent {
+public class Engine : AdvancedShipComponent {
 
 	public float Strength = 10f;
 	public Vector3 Direction { get { return this.transform.forward; } }
 	public GameObject Hull;
-	// Use this for initialization 
-	void Start () {
-	}
-	// Update is called once per frame
-	void Update () {
-
-	}
 	
 	public override float Operate(float availablePower)
 	{

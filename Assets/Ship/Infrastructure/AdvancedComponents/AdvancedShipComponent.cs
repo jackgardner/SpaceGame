@@ -1,26 +1,21 @@
-﻿using UnityEngine;
-using System.Collections;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-[RequireComponent(typeof(Health))]
-public abstract class ShipComponent : MonoBehaviour
+public class AdvancedShipComponent : ShipComponent
 {
-	public Health health;
 	public float Usage;
 	public float MaxUsage;
+	public List<List<InfraComponent>> PowerConduits;
+	public bool HasPower = false;
 
-	// Use this for initialization
-	void Start () {
-		health = this.GetComponent<Health>();;
-	}
-
-	public void ModHealth (float amount)
+	public void UpdateInfrastructureConnections ()
 	{
-		health.ModHealth(amount);
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
+		foreach (List<InfraComponent> connection in PowerConduits) {
+			if (connection.All(ic => ic.health.Alive))
+				HasPower = true;
+		}
+		HasPower = false;
 	}
 
 	public void ModUsage(float amount)
@@ -32,7 +27,7 @@ public abstract class ShipComponent : MonoBehaviour
 			Usage = 0;
 		}
 	}
-	
+
 	/// <summary>
         /// Called once per frame, this is an opportunity for this component to use power
         /// </summary>
@@ -40,3 +35,5 @@ public abstract class ShipComponent : MonoBehaviour
         /// <returns>The amount of power this component consumed</returns>
 	public abstract float Operate(float availablePower);
 }
+
+

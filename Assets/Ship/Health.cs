@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
 	public void Revive()
 	{
 		if (Alive) {
-			Debug.Log ("Ship cannot be revived when it is already alive");
+			Debug.Log ("Item cannot be revived when it is already alive");
 		} else {
 			CurrentHealth = MaxHealth;
 		}

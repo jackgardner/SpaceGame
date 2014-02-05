@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AdvancedShipStation : ShipComponent {
+public class ShipStation : AdvancedShipComponent {
 	public bool Active { get { return health.Alive && HasPower; } private set{Active = value;}}
 	public bool HasPower = false;
 	// Use this for initialization
@@ -9,12 +9,12 @@ public class AdvancedShipStation : ShipComponent {
 	}
 	// Update is called once per frame
 	void Update () {
-
+		
 	}
-
+	
 	public override float Operate(float availablePower)
 	{
-		float projectedPowerUsage = 300f;
+		float projectedPowerUsage = 100f;
 		if ((availablePower - projectedPowerUsage) > 0){
 			HasPower = true;
 			return projectedPowerUsage;
