@@ -5,7 +5,9 @@ using System.Collections;
 public abstract class ShipComponent : MonoBehaviour
 {
 	public Health health;
-	
+	public float Usage;
+	public float MaxUsage;
+
 	// Use this for initialization
 	void Start () {
 		health = this.GetComponent<Health>();;
@@ -19,17 +21,17 @@ public abstract class ShipComponent : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (!health.Alive) {
-			// Add Global state changes here (smoke etc) 
-		} else {
-			// and for alive.
-		}
 	}
 
-    public protected void ModUsage(float amount)
-    {
-
-    }
+	public void ModUsage(float amount)
+	{
+		Usage += amount;
+		if (Usage > MaxUsage)
+			Usage = MaxUsage;
+		if ((Usage <= 0)) {
+			Usage = 0;
+		}
+	}
 	
 	/// <summary>
         /// Called once per frame, this is an opportunity for this component to use power
