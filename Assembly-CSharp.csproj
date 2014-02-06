@@ -102,13 +102,11 @@
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
     </Reference>
-    <Compile Include="Assets\Ship\Infrastructure\InfraComponent.cs" />
-    <Compile Include="Assets\Ship\Infrastructure\Low\LowVoltageCable.cs" />
     <Compile Include="Assets\Ship\Infrastructure\ShipComponent.cs" />
-    <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\Engine.cs" />
     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\PowerGenerator.cs" />
-    <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\AdvancedShipComponent.cs" />
+    <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\FuelTank.cs" />
     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\PowerBattery.cs" />
+    <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\IonEngine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -120,7 +118,5 @@
   -->
   <ItemGroup>
     <Folder Include="Assets\Ship\Infrastructure\" />
-    <Folder Include="Assets\Ship\Infrastructure\Low\" />
-    <Folder Include="Assets\Ship\Infrastructure\High\" />
   </ItemGroup>
 </Project>

@@ -2,34 +2,16 @@ using System;
 
 public class PowerBattery : ShipComponent
 {
-	public float Capacity = 100000f;
-	public float AvailablePower = 0f;
-	public AdvancedShipComponent[] ShipComponents;
-	public PowerGenerator[] PowerGenerators;
-
-	void Update ()
+	public override void Operate ()
 	{
-		// Do Power generators first.
-		foreach (PowerGenerator p in PowerGenerators) {
-			p.UpdateInfrastructureConnections();// Move this somewhere to make it check less frequently.
-		    // Only operate if the component is alive and has power.
-			if (p.healthRef.Alive && p.HasPower)
-				continue;
-		    // Make sure power generators return a negative value.		
-			AvailablePower -= p.Operate(AvailablePower)
-		}
-
-		foreach (AdvancedShipComponent c in ShipComponents)
-		{
-			c.UpdateInfrastructureConnections();// Move this somewhere to make it check less frequently.
-		    // Only operate if the component is alive and has power.
-			if (c.healthRef.Alive && c.HasPower)
-				continue;
-		    // Make sure power generators return a negative value.		
-			AvailablePower -= c.Operate(AvailablePower)
-		}
-		
+		// Find all attached components with less than max power capacity, then siphon more in.
+		Inputs.ForEach(c => {
+			if (c.AvaliablePower < c.PowerCapacity)
+			{
+				c.ModPower(c.PowerCapacity - c.AvaliablePower);
+				this.ModPower(c.AvaliablePower - c.PowerCapacity);
+			}
+		});
 	}
 }
-
 
