@@ -3,26 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Health))]
-public abstract class ShipComponent : MonoBehaviour
+public abstract class ShipComponent : MonoBehaviour , IResourceComponent
 {
-	public List<ShipComponent> Inputs;
-	public List<ShipComponent> Outputs;
+	public List<IResourceComponent> Inputs;
+	public List<IResourceComponent> Outputs;
 
 	public Health health;
 	
 	public float Usage = 0;
 	public float MaxUsage = 0;
 
-	public float AvaliablePower = 0;
-	public float PowerCapacity = 0;
-
-	public float FuelCapacity = 0;
-	public float AvaliableFuel = 0;
+	public float GetResource (string type, float amount)
+	{
+		throw new UnityException ("How did you get here?");
+	}
+	public float PutResource (string type, float amount)
+	{
+		throw new UnityException ("How did you get here?");
+	}
 
 	public void ModHealth (float amount)
 	{
 		health.ModHealth(amount);
 	}
+
 	public void ModUsage(float amount)
 	{
 		Usage += amount;
@@ -30,29 +34,6 @@ public abstract class ShipComponent : MonoBehaviour
 			Usage = MaxUsage;
 		if ((Usage <= 0)) {
 			Usage = 0;
-		}
-	}
-
-	public void ModPower (float amount)
-	{
-		AvaliablePower += amount;
-
-		if (AvaliablePower < 0) {
-			AvaliablePower = 0;
-		}
-		if (AvaliablePower > PowerCapacity) {
-			AvaliablePower = PowerCapacity;
-		}
-	}
-	public void ModFuel (float amount)
-	{
-		AvaliableFuel += amount;
-
-		if (AvaliableFuel < 0) {
-			AvaliableFuel = 0;
-		}
-		if (AvaliableFuel > FuelCapacity) {
-			AvaliableFuel = FuelCapacity;
 		}
 	}
 

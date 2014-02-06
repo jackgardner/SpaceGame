@@ -50,6 +50,7 @@
      <Compile Include="Assets\FPSInputController.cs" />
      <Compile Include="Assets\Math.cs" />
      <Compile Include="Assets\Networking\Client.cs" />
+     <Compile Include="Assets\Networking\EditMode.cs" />
      <Compile Include="Assets\Networking\LoadingScreen.cs" />
      <Compile Include="Assets\Networking\MouseLookPlayer.cs" />
      <Compile Include="Assets\Networking\NetworkPlayer.cs" />
@@ -88,21 +89,14 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TestDontDestroyOnLoad.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\Ship\CameraScript.cs" />
-     <Compile Include="Assets\Ship\Components\Engine.cs" />
-     <Compile Include="Assets\Ship\Components\PowerGenerator.cs" />
-     <Compile Include="Assets\Ship\Components\Stations\Advanced\AdvancedShipStation.cs" />
-     <Compile Include="Assets\Ship\Components\Stations\Basic\BasicEngineeringConsole.cs" />
-     <Compile Include="Assets\Ship\Components\Stations\Basic\BasicNavigationConsole.cs" />
-     <Compile Include="Assets\Ship\Components\Stations\Basic\BasicShipStation.cs" />
-     <Compile Include="Assets\Ship\Components\Stations\Intermediate\ShipStation.cs" />
      <Compile Include="Assets\Ship\Health.cs" />
-     <Compile Include="Assets\Ship\ShipComponent.cs" />
+     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\FuelTank.cs" />
+     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\IonEngine.cs" />
+     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\PowerBattery.cs" />
+     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\PowerGenerator.cs" />
+     <Compile Include="Assets\Ship\Infrastructure\IResourceComponent.cs" />
+     <Compile Include="Assets\Ship\Infrastructure\ShipComponent.cs" />
      <Compile Include="Assets\Ship\ShipMovement.cs" />
-     <Compile Include="Assets\Ship\UI\Basic\BasicUIControl.cs" />
-     <Compile Include="Assets\Ship\UI\Basic\Engines\Basic_EngineDecreaseThrust_UI.cs" />
-     <Compile Include="Assets\Ship\UI\Basic\Engines\Basic_EngineIncreaseThrust_UI.cs" />
-     <Compile Include="Assets\Ship\UI\Basic\PowerGenerators\Basic_PowerGeneratorDecreaseLevel_UI.cs" />
-     <Compile Include="Assets\Ship\UI\Basic\PowerGenerators\Basic_PowerGeneratorIncreaseLevel_UI.cs" />
      <Compile Include="Assets\WorldGeneration\BasicWorldStream.cs" />
      <Compile Include="Assets\WorldGeneration\ChunkObject.cs" />
      <Compile Include="Assets\WorldGeneration\IWorldStreamSource.cs" />
@@ -112,7 +106,6 @@
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
-     <None Include="Assets\Photon Unity Networking\changelog.txt" />
  <Reference Include="Photon3Unity3D">
  <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
  </Reference>

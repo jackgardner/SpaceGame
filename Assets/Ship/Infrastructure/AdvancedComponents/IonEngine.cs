@@ -12,7 +12,7 @@ public class IonEngine : ShipComponent {
 	
 	public override void Operate()
 	{
-		float projectedPowerUsage = (Strength * Usage) * 650f;
+		/*float projectedPowerUsage = (Strength * Usage) * 650f;
 		
                 if ((AvaliablePower - projectedPowerUsage) > 0){
                         Hull.rigidbody.AddForceAtPosition(Direction * Strength * Usage, transform.position);
@@ -24,6 +24,6 @@ public class IonEngine : ShipComponent {
                 }
                 else {
                         // Just dont function if we havent got the power, possibly add some sort of inefficent movement here.
-                }
+                }*/
 	}
 }

@@ -20,7 +20,7 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 		}
 
 		// Edit Mode
-		if (Input.GetKey (KeyCode.Shift)) {
+		if (Input.GetKey(KeyCode.LeftShift)) {
 			Screen.lockCursor = false;
 			EditMode.On = true;
 		} else {
