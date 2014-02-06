@@ -9,16 +9,26 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		Screen.lockCursor = true;
 	} 
 	// Update is called once per frame
-	void Update () {
-        if (!photonView.isMine)
-        {
-            transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 5);
-            transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
-        }
-    }
+	void Update ()
+	{
+		if (!photonView.isMine) {
+			transform.position = Vector3.Lerp (transform.position, this.correctPlayerPos, Time.deltaTime * 5);
+			transform.rotation = Quaternion.Lerp (transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
+		}
+
+		// Edit Mode
+		if (Input.GetKey (KeyCode.Shift)) {
+			Screen.lockCursor = false;
+			EditMode.On = true;
+		} else {
+			Screen.lockCursor = true;
+			EditMode.On = false;
+		}
+
+    	}
 
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {

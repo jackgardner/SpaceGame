@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Ion engine. (Powered by electricity)
+/// </summary>
 public class IonEngine : ShipComponent {
 
 	public float Strength = 10f;

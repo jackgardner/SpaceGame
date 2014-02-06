@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+/// <summary>
+/// Power generator. (Generates Power)
+/// </summary>
 public class PowerGenerator : ShipComponent {
 
 	// How much power can this generator produce per tick ?

@@ -56,6 +56,25 @@ public abstract class ShipComponent : MonoBehaviour
 		}
 	}
 
+	void OnMouseDown ()
+	{
+		if (EditMode.On) {
+			if (EditMode.From != null)
+				EditMode.From = this;
+			else{
+				EditMode.Too = this;
+				//Dynamic Attach logic.
+
+				this.Inputs.Add(EditMode.From);
+
+				EditMode.From = null;
+				EditMode.Too = null;
+			}
+				
+		}
+	}
+
+
 	/// <summary>
         /// Called once per frame, this is an opportunity for this component to use power
         /// </summary>

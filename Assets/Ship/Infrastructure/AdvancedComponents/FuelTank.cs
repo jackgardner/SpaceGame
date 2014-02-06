@@ -1,5 +1,8 @@
 using System;
 
+/// <summary>
+/// Fuel tank. (Stores fuel)
+/// </summary>
 public class FuelTank : ShipComponent
 {
 	public override void Operate ()

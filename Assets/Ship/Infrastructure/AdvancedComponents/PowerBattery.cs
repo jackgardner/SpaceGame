@@ -1,5 +1,8 @@
 using System;
 
+/// <summary>
+/// Power battery. (Stores power)
+/// </summary>
 public class PowerBattery : ShipComponent
 {
 	public override void Operate ()

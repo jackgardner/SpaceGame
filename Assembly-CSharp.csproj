@@ -107,6 +107,7 @@
     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\FuelTank.cs" />
     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\PowerBattery.cs" />
     <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\IonEngine.cs" />
+    <Compile Include="Assets\Networking\EditMode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
