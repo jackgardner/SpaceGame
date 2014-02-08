@@ -5,11 +5,14 @@ using System;
 /// </summary>
 public class PowerBattery : ShipComponent
 {
-	float Capacity = 0f;
+	const float CAPACITY = 0f;
 	float Avaliable = 0f;
 
-	float GetResource(string type, float amount) {
-		if (type != "electricity")
+	public float PutResourcePrio { get { return CAPACITY / Avaliable; } private set;}
+	public float GetResourcePrio { get { return Avaliable / CAPACITY; } private set;}
+
+	public override float GetResource(ResourceType type, float amount) {
+		if (type != ResourceType.Power)
 			return 0;
 		
 		var amountTaken = Math.Min(Avaliable, amount);
@@ -17,20 +20,20 @@ public class PowerBattery : ShipComponent
 		return amountTaken;
 	}
 
-	float PutResource(string type, float amount) {
-		if (type != "electricity")
+	public override float PutResource(ResourceType type, float amount) {
+		if (type != ResourceType.Power)
 			return amount;
 		
 		//Let's put all the power in this battery
 		Avaliable += amount;
 		
 		//Did we overfill?
-		if (Avaliable > Capacity) {
+		if (Avaliable > CAPACITY) {
 			//Looks like we did. How much by?
-			var overfill = Avaliable - Capacity;
+			var overfill = Avaliable - CAPACITY;
 			
 			//Ok so this battery is full
-			Avaliable  = Capacity;
+			Avaliable  = CAPACITY;
 			
 			//And you still have this much power left to put somewhere else
 			return overfill;

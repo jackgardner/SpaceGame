@@ -216,10 +216,10 @@ public class CharacterMotor : MonoBehaviour
                 controller.Move(moveDistance);
 
             // Support moving platform rotation as well:
-            Quaternion newGlobalRotation = movingPlatform.activePlatform.rotation * movingPlatform.activeLocalRotation;
-            Quaternion rotationDiff = newGlobalRotation * Quaternion.Inverse(movingPlatform.activeGlobalRotation);
+            //Quaternion newGlobalRotation = movingPlatform.activePlatform.rotation * movingPlatform.activeLocalRotation;
+            //Quaternion rotationDiff = newGlobalRotation * Quaternion.Inverse(movingPlatform.activeGlobalRotation);
 
-            var yRotation = rotationDiff.eulerAngles.y;
+            //var yRotation = rotationDiff.eulerAngles.y;
             /*if(yRotation != 0)
             {
                 // Prevent rotation of the local up vector

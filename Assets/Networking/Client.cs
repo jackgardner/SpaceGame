@@ -38,7 +38,7 @@ public class Client : MonoBehaviour
     	{
         // first player in the room
 	        GameObject newShip = PhotonNetwork.Instantiate("LightCruiser", new Vector3(0, 0, 0),Quaternion.AngleAxis(0, Vector3.left), 0);
-	        GameObject newShipPhys = PhotonNetwork.Instantiate("LightCruiser_Phys", new Vector3(0, 0, 0), Quaternion.AngleAxis(0, Vector3.left), 0);
+	        PhotonNetwork.Instantiate("LightCruiser_Phys", new Vector3(0, 0, 0), Quaternion.AngleAxis(0, Vector3.left), 0); // Ship Physics
 		
 		GameObject Map = new GameObject ("Map");
 	        GameObject LoadingScreen = new GameObject("LoadingScreen");

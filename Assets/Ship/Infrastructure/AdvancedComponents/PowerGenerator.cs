@@ -9,40 +9,31 @@ using System.Linq;
 using System;
 
 
-public class PowerGenerator : ShipComponent, IResourceComponent {
+public class PowerGenerator : ShipComponent {
 
 	// How much base power can this generator produce per tick ?
-	public float Capability = 1000f;
+	const float MAX_FUEL_USAGE = 50f;
+	const float POWER_PER_UNIT_FUEL = 20f;
 
-	float GetResource(string type, float amount) {
+
+	public float PutResourcePrio { get { return 0; } private set;}
+	public float GetResourcePrio { get { return 0; } private set;}
+
+	public override float GetResource(ResourceType type, float amount) {
 		return 0;
 	}
-	float PutResource(string type, float amount) {
-		return 0;
+	public override float PutResource(ResourceType type, float amount) {
+		return amount;
 	}
-
-	public override void Operate ()
+	public void Update()
 	{
-		// How many fuel tanks are connected to this generator?
-		FuelTank[] ConnectedTanks = (FuelTank[])Inputs.Where (c => c.GetType() == typeof(FuelTank)).ToArray();
-		var tanksWithoutFuel = ConnectedTanks.Where(t => t.AvaliableFuel <= 0);
-		int OperatingTanks = ConnectedTanks.Count() - tanksWithoutFuel.Count();
-	
-		ConnectedTanks.Where(x => x.AvaliableFuel > 0)
-			.ToList().ForEach(x=> 
-			         { 
-				x.GetResource("fuel",-(50 / OperatingTanks));
-			});
+		// Call me elsewhere
+		this.Operate();
+	}
 
-		// Overclocking
-		if (Usage > 1) {
-			this.health.ModHealth (-50 * Usage);
-		}
-
-		// Add Power to all outputs.
-		float HealthModifier = this.health.CurrentHealth / this.health.MaxHealth;
-		foreach (ShipComponent c in Outputs) {
-			c.PutResource("electricity", (Capability * HealthModifier * Usage) / Outputs.Count);
-		}
+	public override void Operate (InfrastructureNode infrastructure)
+	{
+		var f = infrastructure.GetResource(ResourceType.ChemicalFuel, MAX_FUEL_USAGE);
+		infrastructure.PutResource(ResourceType.Power, f * POWER_PER_UNIT_FUEL);
 	}
 }

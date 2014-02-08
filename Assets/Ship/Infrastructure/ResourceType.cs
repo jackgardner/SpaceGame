@@ -9,13 +9,10 @@
 //------------------------------------------------------------------------------
 using System;
 
-public interface IResourceComponent
+public enum ResourceType
 {
-	float PutResourcePrio {get;set;}
-	float GetResourcePrio {get;set;}
-
-	float GetResource(ResourceType type, float amount);
-	float PutResource(ResourceType type, float amount);
+	Power,
+	ChemicalFuel
 }
 
 

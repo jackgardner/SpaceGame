@@ -9,21 +9,25 @@ public class IonEngine : ShipComponent {
 	public float Strength = 10f;
 	public Vector3 Direction { get { return this.transform.forward; } }
 	public GameObject Hull;
-	
-	public override void Operate()
-	{
-		/*float projectedPowerUsage = (Strength * Usage) * 650f;
-		
-                if ((AvaliablePower - projectedPowerUsage) > 0){
-                        Hull.rigidbody.AddForceAtPosition(Direction * Strength * Usage, transform.position);
 
-			// Overclocking
-			if (Usage > 1) {
-				this.health.ModHealth (-50 * Usage);
-			}
-                }
-                else {
-                        // Just dont function if we havent got the power, possibly add some sort of inefficent movement here.
-                }*/
+	const float MAX_POWER_USAGE = 150f;
+	const float THRUST_PER_UNIT_POWER = 0.05f;
+
+	public override float GetResource(ResourceType type, float amount) {
+		return 0;
+	}
+	public override float PutResource(ResourceType type, float amount) {
+		return amount;
+	}
+
+	public override void Operate(InfrastructureNode infrastructure)
+	{
+		// Overclocking
+		if (Usage > 1) {
+			this.health.ModHealth (-50 * Usage);
+		}
+
+		var f = infrastructure.GetResource(ResourceType.Electricity, MAX_POWER_USAGE * Usage);
+		Hull.rigidbody.AddForceAtPosition(Direction * f * THRUST_PER_UNIT_POWER , transform.position);
 	}
 }

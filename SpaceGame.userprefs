@@ -1,34 +1,38 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Ship\Infrastructure\AdvancedComponents\PowerBattery.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Ship\Infrastructure\ShipComponent.cs">
     <Files>
-      <File FileName="Assets\Networking\NetworkPlayer.cs" Line="25" Column="23" />
+      <File FileName="Assets\Ship\Infrastructure\AdvancedComponents\IonEngine.cs" Line="11" Column="25" />
+      <File FileName="Assets\Networking\NetworkPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\FPSInputController.cs" Line="1" Column="1" />
-      <File FileName="Assets\CharacterMotor.cs" Line="1" Column="1" />
+      <File FileName="Assets\CharacterMotor.cs" Line="218" Column="29" />
       <File FileName="Assets\WorldGeneration\BasicWorldStream.cs" Line="1" Column="1" />
       <File FileName="Assets\WorldGeneration\ChunkObject.cs" Line="1" Column="1" />
       <File FileName="Assets\WorldGeneration\IWorldStreamSource.cs" Line="1" Column="1" />
       <File FileName="Assets\WorldGeneration\Octree.cs" Line="1" Column="1" />
       <File FileName="Assets\WorldGeneration\WorldGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Networking\Client.cs" Line="1" Column="1" />
+      <File FileName="Assets\Networking\Client.cs" Line="40" Column="112" />
       <File FileName="Assets\Math.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\CameraScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\Health.cs" Line="1" Column="1" />
       <File FileName="Assets\Ship\ShipMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Ship\Infrastructure\ShipComponent.cs" Line="10" Column="2" />
-      <File FileName="Assets\Ship\Infrastructure\AdvancedComponents\PowerGenerator.cs" Line="14" Column="1" />
+      <File FileName="Assets\Ship\Infrastructure\ShipComponent.cs" Line="14" Column="28" />
+      <File FileName="Assets\Ship\Infrastructure\AdvancedComponents\PowerGenerator.cs" Line="9" Column="14" />
       <File FileName="Assets\Networking\ShipSync.cs" Line="1" Column="1" />
-      <File FileName="Assets\Networking\NetworkPlayer.cs" Line="47" Column="1" />
-      <File FileName="Assets\Networking\MouseLookPlayer.cs" Line="84" Column="1" />
-      <File FileName="Assets\Networking\LoadingScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Networking\MouseLookPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Networking\LoadingScreen.cs" Line="14" Column="8" />
       <File FileName="Assets\WorldGeneration\InMemoryWorldStream.cs" Line="1" Column="1" />
-      <File FileName="Assets\Ship\Infrastructure\AdvancedComponents\PowerBattery.cs" Line="17" Column="3" />
+      <File FileName="Assets\Ship\Infrastructure\AdvancedComponents\PowerBattery.cs" Line="12" Column="26" />
       <File FileName="Assets\Ship\Infrastructure\AdvancedComponents\FuelTank.cs" Line="1" Column="1" />
-      <File FileName="Assets\Ship\Infrastructure\IResourceComponent.cs" Line="10" Column="14" />
+      <File FileName="Assets\Ship\Infrastructure\IResourceComponent.cs" Line="12" Column="21" />
+      <File FileName="Assets\Ship\Infrastructure\ResourceType.cs" Line="1" Column="1" />
+      <File FileName="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonNetwork.cs" Line="1526" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\UnityProjects\SpaceGame\Assets\Ship\Infrastructure\ShipComponent.cs" line="57" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="Assets\Networking\Map.cs" line="65" offsetX="1405" offsetY="1088" expression="newAsteroid" liveUpdate="False" />

@@ -95,6 +95,8 @@
      <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\PowerBattery.cs" />
      <Compile Include="Assets\Ship\Infrastructure\AdvancedComponents\PowerGenerator.cs" />
      <Compile Include="Assets\Ship\Infrastructure\IResourceComponent.cs" />
+     <Compile Include="Assets\Ship\Infrastructure\InfrastructureNode.cs" />
+     <Compile Include="Assets\Ship\Infrastructure\ResourceType.cs" />
      <Compile Include="Assets\Ship\Infrastructure\ShipComponent.cs" />
      <Compile Include="Assets\Ship\ShipMovement.cs" />
      <Compile Include="Assets\WorldGeneration\BasicWorldStream.cs" />

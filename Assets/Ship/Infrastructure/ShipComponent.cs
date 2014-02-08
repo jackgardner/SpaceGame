@@ -5,22 +5,22 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Health))]
 public abstract class ShipComponent : MonoBehaviour , IResourceComponent
 {
-	public List<IResourceComponent> Inputs;
-	public List<IResourceComponent> Outputs;
+	public List<IResourceComponent> Inputs = new List<IResourceComponent>();
+	public List<IResourceComponent> Outputs = new List<IResourceComponent>();
 
 	public Health health;
 	
 	public float Usage = 0;
 	public float MaxUsage = 0;
 
-	public float GetResource (string type, float amount)
+	public virtual float GetResource (ResourceType type, float amount)
 	{
 		throw new UnityException ("How did you get here?");
 	}
-	public float PutResource (string type, float amount)
+	public virtual float PutResource (ResourceType type, float amount)
 	{
 		throw new UnityException ("How did you get here?");
-	}
+	} 
 
 	public void ModHealth (float amount)
 	{
@@ -40,10 +40,15 @@ public abstract class ShipComponent : MonoBehaviour , IResourceComponent
 	void OnMouseDown ()
 	{
 		if (EditMode.On) {
-			if (EditMode.From != null)
+			if (EditMode.From == null)
+			{
 				EditMode.From = this;
+				Debug.Log("Grabbing, FROM: " + this.name);
+			}
 			else{
 				EditMode.Too = this;
+				EditMode.From.Outputs.Add (this);
+				Debug.Log("PLACING, TOO: " + this.name);
 				//Dynamic Attach logic.
 
 				this.Inputs.Add(EditMode.From);
